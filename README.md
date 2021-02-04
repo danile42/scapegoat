@@ -200,53 +200,53 @@ There are currently 118 inspections. An overview list is given, followed by a mo
 | FindAndNotEqualsNoneReplaceWithExists | `.find(x => ) != None` can be replaced with `exist(x => )` | Info | |
 | FindDotIsDefined | `find(x => ).isDefined` can be replaced with `exist(x => )` | Info | |
 | IllegalFormatString | Looks for invalid format strings | Error | Unsafe |
-| ImpossibleOptionSizeCondition | Checks for code like `option.size > 2` which can never be true | Error |
-| IncorrectNumberOfArgsToFormat | Checks for wrong number of arguments to `String.format` | Error |
-| IncorrectlyNamedExceptions | Checks for exceptions that are not called *Exception and vice versa | Error |
-| InvalidRegex | Checks for invalid regex literals | Info |
-| IsInstanceOf | Checks for use of `isInstanceOf` | Warning |
-| JavaConversionsUse | Checks for use of implicit Java conversions | Warning |
-| ListAppend | Checks for List :+ which is O(n) | Info |
-| ListSize | Checks for `List.size` which is O(n). | Info |
-| LonelySealedTrait | Checks for sealed traits which have no implementation | Error |
-| LooksLikeInterpolatedString | Finds strings that look like they should be interpolated but are not | Warning |
-| MapGetAndGetOrElse | `Map.get(key).getOrElse(value)` can be replaced with `Map.getOrElse(key, value)` | Error |
-| MaxParameters | Checks for methods that have over 10 parameters | Info |
-| MethodNames | Warns on method names that don't adhere to the Scala style guidelines | Info |
-| MethodReturningAny | Checks for defs that are defined or inferred to return `Any` | Warning |
-| ModOne | Checks for `x % 1` which will always return `0` | Warning |
-| NanComparison | Checks for `x == Double.NaN` which will always fail | Error |
-| NegationIsEmpty | `!Traversable.isEmpty` can be replaced with `Traversable.nonEmpty` | Info |
-| NegationNonEmpty | `!Traversable.nonEmpty` can be replaced with `Traversable.isEmpty` | Info |
-| NoOpOverride | Checks for code that overrides parent method but simply calls super | Info |
-| NullAssignment | Checks for use of `null` in assignments | Warning |
-| NullParameter | Checks for use of `null` in method invocation | Warning |
-| ObjectNames | Ensures object names adhere to the Scala style guidelines | Info |
-| OptionGet | Checks for `Option.get` | Error |
-| OptionSize | Checks for `Option.size` | Error |
-| ParameterlessMethodReturnsUnit | Checks for `def foo : Unit` | Warning |
-| PartialFunctionInsteadOfMatch | Warns when you could use a partial function directly instead of a match block | Info |
-| PointlessTypeBounds | Finds type bounds of the form `[A <: Any]` or `[A >: Nothing]`| Warning |
-| PreferMapEmpty | Checks for Map() when could use Map.empty | Info |
-| PreferSeqEmpty | Checks for Seq() when could use Seq.empty | Info |
-| PreferSetEmpty | Checks for Set() when could use Set.empty | Info |
-| ProductWithSerializableInferred | Checks for vals that have `Product with Serializable` as their inferred type | Warning |
-| PublicFinalizer | Checks for overridden finalizes that are public | Info |
-| RedundantFinalModifierOnMethod | Redundant `final` modifier on method that cannot be overridden | Info |
-| RedundantFinalModifierOnVar | Redundant `final` modifier on var that cannot be overridden | Info |
-| RedundantFinalizer | Checks for empty finalizers. | Warning |
-| RepeatedCaseBody | Checks for case statements which have the same body | Warning |
-| RepeatedIfElseBody | Checks for the main branch and the else branch of an `if` being the same | Warning |
-| ReverseFunc | `reverse` followed by `head`, `headOption`, `iterator`, or`map` can be replaced, respectively, with `last`, `lastOption`, `reverseIterator`, or `reverseMap` | Info |
-| ReverseTailReverse | `.reverse.tail.reverse` can be replaced with `init` | Info |
-| ReverseTakeReverse | `.reverse.take(...).reverse` can be replaced with `takeRight` | Info |
-| SimplifyBooleanExpression | `b == false` can be simplified to `!b` | Info |
-| StripMarginOnRegex | Checks for .stripMargin on regex strings that contain a pipe | Error |
-| SubstringZero | Checks for `String.substring(0)` | Info |
-| SuspiciousMatchOnClassObject | Finds code where matching is taking place on class literals | Warning |
-| SwallowedException | Finds catch blocks that don't handle caught exceptions | Warning |
-| SwapSortFilter | `sort.filter` can be replaced with `filter.sort` for performance | Info |
-| TryGet | Checks for use of `Try.get` | Error |
+| ImpossibleOptionSizeCondition | Checks for code like `option.size > 2` which can never be true | Error | Faulty logic |
+| IncorrectNumberOfArgsToFormat | Checks for wrong number of arguments to `String.format` | Error | Unsafe |
+| IncorrectlyNamedExceptions | Checks for exceptions that are not called *Exception and vice versa | Error | Naming |
+| InvalidRegex | Checks for invalid regex literals | Info | Compile error |
+| IsInstanceOf | Checks for use of `isInstanceOf` | Warning | Faulty logic |
+| JavaConversionsUse | Checks for use of implicit Java conversions | Warning | Faulty logic |
+| ListAppend | Checks for List :+ which is O(n) | Info | Performance |
+| ListSize | Checks for `List.size` which is O(n). | Info | Performance |
+| LonelySealedTrait | Checks for sealed traits which have no implementation | Error | Faulty logic, Redundant |
+| LooksLikeInterpolatedString | Finds strings that look like they should be interpolated but are not | Warning | Faulty logic |
+| MapGetAndGetOrElse | `Map.get(key).getOrElse(value)` can be replaced with `Map.getOrElse(key, value)` | Error | |
+| MaxParameters | Checks for methods that have over 10 parameters | Info | Readability |
+| MethodNames | Warns on method names that don't adhere to the Scala style guidelines | Info | |
+| MethodReturningAny | Checks for defs that are defined or inferred to return `Any` | Warning | |
+| ModOne | Checks for `x % 1` which will always return `0` | Warning | |
+| NanComparison | Checks for `x == Double.NaN` which will always fail | Error | Unsafe |
+| NegationIsEmpty | `!Traversable.isEmpty` can be replaced with `Traversable.nonEmpty` | Info | |
+| NegationNonEmpty | `!Traversable.nonEmpty` can be replaced with `Traversable.isEmpty` | Info | |
+| NoOpOverride | Checks for code that overrides parent method but simply calls super | Info | |
+| NullAssignment | Checks for use of `null` in assignments | Warning | Unsafe |
+| NullParameter | Checks for use of `null` in method invocation | Warning | Unsafe |
+| ObjectNames | Ensures object names adhere to the Scala style guidelines | Info | |
+| OptionGet | Checks for `Option.get` | Error | Unsafe |
+| OptionSize | Checks for `Option.size` | Error | Readability |
+| ParameterlessMethodReturnsUnit | Checks for `def foo : Unit` | Warning | |
+| PartialFunctionInsteadOfMatch | Warns when you could use a partial function directly instead of a match block | Info | Readability |
+| PointlessTypeBounds | Finds type bounds of the form `[A <: Any]` or `[A >: Nothing]`| Warning | Faulty logic, Redundant |
+| PreferMapEmpty | Checks for Map() when could use Map.empty | Info | Performance |
+| PreferSeqEmpty | Checks for Seq() when could use Seq.empty | Info | Performance |
+| PreferSetEmpty | Checks for Set() when could use Set.empty | Info | Performance |
+| ProductWithSerializableInferred | Checks for vals that have `Product with Serializable` as their inferred type | Warning | Faulty logic |
+| PublicFinalizer | Checks for overridden finalizes that are public | Info | Faulty logic |
+| RedundantFinalModifierOnMethod | Redundant `final` modifier on method that cannot be overridden | Info | |
+| RedundantFinalModifierOnVar | Redundant `final` modifier on var that cannot be overridden | Info | |
+| RedundantFinalizer | Checks for empty finalizers. | Warning | Faulty logic, Redundant |
+| RepeatedCaseBody | Checks for case statements which have the same body | Warning | Redundant, Readability |
+| RepeatedIfElseBody | Checks for the main branch and the else branch of an `if` being the same | Warning | |
+| ReverseFunc | `reverse` followed by `head`, `headOption`, `iterator`, or`map` can be replaced, respectively, with `last`, `lastOption`, `reverseIterator`, or `reverseMap` | Info | Performance, Readability |
+| ReverseTailReverse | `.reverse.tail.reverse` can be replaced with `init` | Info | Performance, Readability |
+| ReverseTakeReverse | `.reverse.take(...).reverse` can be replaced with `takeRight` | Info | Performance, Readability |
+| SimplifyBooleanExpression | `b == false` can be simplified to `!b` | Info | |
+| StripMarginOnRegex | Checks for .stripMargin on regex strings that contain a pipe | Error | Faulty logic |
+| SubstringZero | Checks for `String.substring(0)` | Info | |
+| SuspiciousMatchOnClassObject | Finds code where matching is taking place on class literals | Warning | Faulty logic |
+| SwallowedException | Finds catch blocks that don't handle caught exceptions | Warning | Unsafe, Faulty logic |
+| SwapSortFilter | `sort.filter` can be replaced with `filter.sort` for performance | Info | Performance |
+| TryGet | Checks for use of `Try.get` | Error | Unsafe |
 | TypeShadowing | Checks for shadowed type parameters in methods | Warning |
 | UnnecessaryConversion | Checks for unnecessary `toInt` on instances of Int or `toString` on Strings, etc. | Warning |
 | UnnecessaryIf | Checks for code like `if (expr) true else false` | Info |
