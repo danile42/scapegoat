@@ -152,7 +152,7 @@ There are currently 118 inspections. An overview list is given, followed by a mo
 | ArraysInFormat | Checks for arrays passed to String.format | Error | Formatting |
 | ArraysToString | Checks for explicit toString calls on arrays | Warning | Performance |
 | AsInstanceOf | Checks for use of `asInstanceOf` | Warning | Unsafe |
-| AvoidOperatorOverload | Checks for mental symbolic method names | Info | Readability |
+| AvoidOperatorOverload | Checks for mental symbolic method names | Info | Naming |
 | AvoidSizeEqualsZero | Traversable.size can be slow for some data structure, prefer .isEmpty | Warning | Performance |
 | AvoidSizeNotEqualsZero | Traversable.size can be slow for some data structure, prefer .nonEmpty | Warning | Performance |
 | AvoidToMinusOne | Checks for loops that use `x to n-1` instead of `x until n` | Info | Redundant |
@@ -162,44 +162,44 @@ There are currently 118 inspections. An overview list is given, followed by a mo
 | BrokenOddness | checks for a % 2 == 1 for oddness because this fails on negative numbers | Warning | Unsafe |
 | CatchException | Checks for try blocks that catch Exception | Warning | Faulty logic |
 | CatchFatal | Checks for try blocks that catch fatal exceptions: VirtualMachineError, ThreadDeath, InterruptedException, LinkageError, ControlThrowable | Warning | Faulty logic |
-| CatchNpe | Checks for try blocks that catch null pointer exceptions | Error |
-| CatchThrowable | Checks for try blocks that catch Throwable | Warning |
-| ClassNames | Ensures class names adhere to the style guidelines | Info |
-| CollectionIndexOnNonIndexedSeq | Checks for indexing on a Seq which is not an IndexedSeq | Warning |
-| CollectionNamingConfusion | Checks for variables that are confusingly named | Info |
-| CollectionNegativeIndex | Checks for negative access on a sequence eg `list.get(-1)` | Warning |
-| CollectionPromotionToAny | Checks for collection operations that promote the collection to `Any` | Warning |
-| ComparingFloatingPointTypes | Checks for equality checks on floating point types | Error |
-| ComparingUnrelatedTypes | Checks for equality comparisons that cannot succeed | Error |
-| ComparisonToEmptyList | Checks for code like `a == List()` or `a == Nil` | Info |
-| ComparisonToEmptySet | Checks for code like `a == Set()` or `a == Set.empty` | Info |
-| ComparisonWithSelf | Checks for equality checks with itself | Warning |
-| ConstantIf | Checks for code where the if condition compiles to a constant | Warning |
-| DivideByOne | Checks for divide by one, which always returns the original value | Warning |
-| DoubleNegation | Checks for code like `!(!b)` | Info |
-| DuplicateImport | Checks for import statements that import the same selector | Info |
-| DuplicateMapKey | Checks for duplicate key names in Map literals | Warning |
-| DuplicateSetValue | Checks for duplicate values in set literals | Warning |
-| EitherGet | Checks for use of .get on Left or Right | Error |
-| EmptyCaseClass | Checks for case classes like `case class Faceman()` | Info |
-| EmptyFor | Checks for empty `for` loops | Warning |
-| EmptyIfBlock | Checks for empty `if` blocks | Warning |
-| EmptyInterpolatedString | Looks for interpolated strings that have no arguments | Error |
-| EmptyMethod | Looks for empty methods | Warning |
-| EmptySynchronizedBlock | Looks for empty synchronized blocks | Warning |
-| EmptyTryBlock | Looks for empty try blocks | Warning |
-| EmptyWhileBlock | Looks for empty while loops | Warning |
-| ExistsSimplifiableToContains | `exists(x => x == b)` replaceable with `contains(b)` | Info |
-| FilterDotHead | `.filter(x => ).head` can be replaced with `find(x => ) match { .. } ` | Info |
-| FilterDotHeadOption | `.filter(x =>).headOption` can be replaced with `find(x => )` | Info |
-| FilterDotIsEmpty | `.filter(x => ).isEmpty` can be replaced with `!exists(x => )` | Info |
-| FilterDotSize | `.filter(x => ).size` can be replaced more concisely with with `count(x => )` | Info |
-| FilterOptionAndGet | `.filter(_.isDefined).map(_.get)` can be replaced with `flatten` | Info |
-| FinalModifierOnCaseClass | Using Case classes without `final` modifier can lead to surprising breakage | Info |
-| FinalizerWithoutSuper | Checks for overridden finalizers that do not call super | Warning |
-| FindAndNotEqualsNoneReplaceWithExists | `.find(x => ) != None` can be replaced with `exist(x => )` | Info |
-| FindDotIsDefined | `find(x => ).isDefined` can be replaced with `exist(x => )` | Info |
-| IllegalFormatString | Looks for invalid format strings | Error |
+| CatchNpe | Checks for try blocks that catch null pointer exceptions | Error | Faulty logic |
+| CatchThrowable | Checks for try blocks that catch Throwable | Warning | Faulty logic |
+| ClassNames | Ensures class names adhere to the style guidelines | Info | Naming |
+| CollectionIndexOnNonIndexedSeq | Checks for indexing on a Seq which is not an IndexedSeq | Warning | Performance |
+| CollectionNamingConfusion | Checks for variables that are confusingly named | Info | Naming |
+| CollectionNegativeIndex | Checks for negative access on a sequence eg `list.get(-1)` | Warning | Unsafe |
+| CollectionPromotionToAny | Checks for collection operations that promote the collection to `Any` | Warning | Faulty logic |
+| ComparingFloatingPointTypes | Checks for equality checks on floating point types | Error | Faulty logic |
+| ComparingUnrelatedTypes | Checks for equality comparisons that cannot succeed | Error | Faulty logic |
+| ComparisonToEmptyList | Checks for code like `a == List()` or `a == Nil` | Info | Readability |
+| ComparisonToEmptySet | Checks for code like `a == Set()` or `a == Set.empty` | Info | Readability |
+| ComparisonWithSelf | Checks for equality checks with itself | Warning | Redundant |
+| ConstantIf | Checks for code where the if condition compiles to a constant | Warning | Redundant |
+| DivideByOne | Checks for divide by one, which always returns the original value | Warning | Redundant |
+| DoubleNegation | Checks for code like `!(!b)` | Info | Readability |
+| DuplicateImport | Checks for import statements that import the same selector | Info | Redundant |
+| DuplicateMapKey | Checks for duplicate key names in Map literals | Warning | Faulty logic |
+| DuplicateSetValue | Checks for duplicate values in set literals | Warning | Redundant |
+| EitherGet | Checks for use of .get on Left or Right | Error | Deprecated |
+| EmptyCaseClass | Checks for case classes like `case class Faceman()` | Info | Performance, Readability |
+| EmptyFor | Checks for empty `for` loops | Warning | Faulty logic, Performance, Readability |
+| EmptyIfBlock | Checks for empty `if` blocks | Warning | Faulty logic |
+| EmptyInterpolatedString | Looks for interpolated strings that have no arguments | Error | Faulty logic, Performance |
+| EmptyMethod | Looks for empty methods | Warning | Faulty logic |
+| EmptySynchronizedBlock | Looks for empty synchronized blocks | Warning | Faulty logic |
+| EmptyTryBlock | Looks for empty try blocks | Warning | |
+| EmptyWhileBlock | Looks for empty while loops | Warning | |
+| ExistsSimplifiableToContains | `exists(x => x == b)` replaceable with `contains(b)` | Info | Readbility, Performance |
+| FilterDotHead | `.filter(x => ).head` can be replaced with `find(x => ) match { .. } ` | Info |  |
+| FilterDotHeadOption | `.filter(x =>).headOption` can be replaced with `find(x => )` | Info | |
+| FilterDotIsEmpty | `.filter(x => ).isEmpty` can be replaced with `!exists(x => )` | Info | |
+| FilterDotSize | `.filter(x => ).size` can be replaced more concisely with with `count(x => )` | Info | |
+| FilterOptionAndGet | `.filter(_.isDefined).map(_.get)` can be replaced with `flatten` | Info | |
+| FinalModifierOnCaseClass | Using Case classes without `final` modifier can lead to surprising breakage | Info | Faulty logic |
+| FinalizerWithoutSuper | Checks for overridden finalizers that do not call super | Warning |  Faulty logic |
+| FindAndNotEqualsNoneReplaceWithExists | `.find(x => ) != None` can be replaced with `exist(x => )` | Info | |
+| FindDotIsDefined | `find(x => ).isDefined` can be replaced with `exist(x => )` | Info | |
+| IllegalFormatString | Looks for invalid format strings | Error | Unsafe |
 | ImpossibleOptionSizeCondition | Checks for code like `option.size > 2` which can never be true | Error |
 | IncorrectNumberOfArgsToFormat | Checks for wrong number of arguments to `String.format` | Error |
 | IncorrectlyNamedExceptions | Checks for exceptions that are not called *Exception and vice versa | Error |
