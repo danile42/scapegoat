@@ -146,22 +146,22 @@ For instructions on suppressing warnings by file, by inspection or by line see [
 
 There are currently 118 inspections. An overview list is given, followed by a more detailed description of each inspection after the list (todo: finish rest of detailed descriptions)
 
-| Name | Brief Description | Default Level |
-|------|-------------------|---------------|
-| ArrayEquals | Checks for comparison of arrays using `==` which will always return false | Info |
-| ArraysInFormat | Checks for arrays passed to String.format | Error |
-| ArraysToString | Checks for explicit toString calls on arrays | Warning |
-| AsInstanceOf | Checks for use of `asInstanceOf` | Warning |
-| AvoidOperatorOverload | Checks for mental symbolic method names | Info |
-| AvoidSizeEqualsZero | Traversable.size can be slow for some data structure, prefer .isEmpty | Warning |
-| AvoidSizeNotEqualsZero | Traversable.size can be slow for some data structure, prefer .nonEmpty | Warning |
-| AvoidToMinusOne | Checks for loops that use `x to n-1` instead of `x until n` | Info |
-| BigDecimalDoubleConstructor | Checks for use of `BigDecimal(double)` which can be unsafe | Warning |
-| BigDecimalScaleWithoutRoundingMode | `setScale()` on a `BigDecimal` without setting the rounding mode can throw an exception | Warning |
-| BoundedByFinalType | Looks for types with upper bounds of a final type | Warning |
-| BrokenOddness | checks for a % 2 == 1 for oddness because this fails on negative numbers | Warning |
-| CatchException | Checks for try blocks that catch Exception | Warning |
-| CatchFatal | Checks for try blocks that catch fatal exceptions: VirtualMachineError, ThreadDeath, InterruptedException, LinkageError, ControlThrowable | Warning |
+| Name | Brief Description | Default Level | Category |
+|------|-------------------|---------------|----------|
+| ArrayEquals | Checks for comparison of arrays using `==` which will always return false | Info | Faulty logic |
+| ArraysInFormat | Checks for arrays passed to String.format | Error | Formatting |
+| ArraysToString | Checks for explicit toString calls on arrays | Warning | Performance |
+| AsInstanceOf | Checks for use of `asInstanceOf` | Warning | Unsafe |
+| AvoidOperatorOverload | Checks for mental symbolic method names | Info | Readability |
+| AvoidSizeEqualsZero | Traversable.size can be slow for some data structure, prefer .isEmpty | Warning | Performance |
+| AvoidSizeNotEqualsZero | Traversable.size can be slow for some data structure, prefer .nonEmpty | Warning | Performance |
+| AvoidToMinusOne | Checks for loops that use `x to n-1` instead of `x until n` | Info | Redundant |
+| BigDecimalDoubleConstructor | Checks for use of `BigDecimal(double)` which can be unsafe | Warning | Faulty logic |
+| BigDecimalScaleWithoutRoundingMode | `setScale()` on a `BigDecimal` without setting the rounding mode can throw an exception | Warning | Unsafe |
+| BoundedByFinalType | Looks for types with upper bounds of a final type | Warning | Redundant |
+| BrokenOddness | checks for a % 2 == 1 for oddness because this fails on negative numbers | Warning | Unsafe |
+| CatchException | Checks for try blocks that catch Exception | Warning | Faulty logic |
+| CatchFatal | Checks for try blocks that catch fatal exceptions: VirtualMachineError, ThreadDeath, InterruptedException, LinkageError, ControlThrowable | Warning | Faulty logic |
 | CatchNpe | Checks for try blocks that catch null pointer exceptions | Error |
 | CatchThrowable | Checks for try blocks that catch Throwable | Warning |
 | ClassNames | Ensures class names adhere to the style guidelines | Info |
