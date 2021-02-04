@@ -247,25 +247,25 @@ There are currently 118 inspections. An overview list is given, followed by a mo
 | SwallowedException | Finds catch blocks that don't handle caught exceptions | Warning | Unsafe, Faulty logic |
 | SwapSortFilter | `sort.filter` can be replaced with `filter.sort` for performance | Info | Performance |
 | TryGet | Checks for use of `Try.get` | Error | Unsafe |
-| TypeShadowing | Checks for shadowed type parameters in methods | Warning |
-| UnnecessaryConversion | Checks for unnecessary `toInt` on instances of Int or `toString` on Strings, etc. | Warning |
-| UnnecessaryIf | Checks for code like `if (expr) true else false` | Info |
-| UnnecessaryReturnUse | Checks for use of `return` keyword in blocks | Info |
-| UnreachableCatch | Checks for catch clauses that cannot be reached | Warning |
-| UnsafeContains | Checks for `List.contains(value)` for invalid types | Error |
-| UnsafeStringContains | Checks for `String.contains(value)` for invalid types | Error |
-| UnsafeTraversableMethods | Check unsafe traversable method usages (head, tail, init, last, reduce, reduceLeft, reduceRight, max, maxBy, min, minBy) | Error |
-| UnusedMethodParameter | Checks for unused method parameters | Warning |
-| UseCbrt | Checks for use of `math.pow` for calculating `math.cbrt` | Info |
-| UseExpM1 | Checks for use of `math.exp(x) - 1` instead of `math.expm1(x)` | Info |
-| UseLog10 | Checks for use of `math.log(x)/math.log(10)` instead of `math.log10(x)` | Info |
-| UseLog1P | Checks for use of `math.log(x + 1)` instead of `math.log1p(x)` | Info |
-| UseSqrt | Checks for use of `math.pow` for calculating `math.sqrt` | Info |
-| VarClosure | Finds closures that reference var | Warning |
-| VarCouldBeVal | Checks for `var`s that could be declared as `val`s | Warning |
-| VariableShadowing | Checks for multiple uses of the variable name in nested scopes | Warning |
-| WhileTrue | Checks for code that uses a `while(true)` or `do { } while(true)` block. | Warning |
-| ZeroNumerator | Checks for dividing by 0 by a number, eg `0 / x` which will always return `0` | Warning |
+| TypeShadowing | Checks for shadowed type parameters in methods | Warning | Faulty logic |
+| UnnecessaryConversion | Checks for unnecessary `toInt` on instances of Int or `toString` on Strings, etc. | Warning | |
+| UnnecessaryIf | Checks for code like `if (expr) true else false` | Info | |
+| UnnecessaryReturnUse | Checks for use of `return` keyword in blocks | Info | |
+| UnreachableCatch | Checks for catch clauses that cannot be reached | Warning | |
+| UnsafeContains | Checks for `List.contains(value)` for invalid types | Error | Faulty logic |
+| UnsafeStringContains | Checks for `String.contains(value)` for invalid types | Error | Faulty logic |
+| UnsafeTraversableMethods | Check unsafe traversable method usages (head, tail, init, last, reduce, reduceLeft, reduceRight, max, maxBy, min, minBy) | Error | Unsafe |
+| UnusedMethodParameter | Checks for unused method parameters | Warning | |
+| UseCbrt | Checks for use of `math.pow` for calculating `math.cbrt` | Info | Performance, Readability |
+| UseExpM1 | Checks for use of `math.exp(x) - 1` instead of `math.expm1(x)` | Info | Performance, Readability |
+| UseLog10 | Checks for use of `math.log(x)/math.log(10)` instead of `math.log10(x)` | Info | Performance, Readability |
+| UseLog1P | Checks for use of `math.log(x + 1)` instead of `math.log1p(x)` | Info | Performance, Readability |
+| UseSqrt | Checks for use of `math.pow` for calculating `math.sqrt` | Info | Performance, Readability |
+| VarClosure | Finds closures that reference var | Warning | Faulty logic |
+| VarCouldBeVal | Checks for `var`s that could be declared as `val`s | Warning | |
+| VariableShadowing | Checks for multiple uses of the variable name in nested scopes | Warning | Naming, Readability |
+| WhileTrue | Checks for code that uses a `while(true)` or `do { } while(true)` block. | Warning | Faulty logic, Performance |
+| ZeroNumerator | Checks for dividing by 0 by a number, eg `0 / x` which will always return `0` | Warning | |
 
 ##### Arrays to string
 
